@@ -1,11 +1,13 @@
 # UP BMEC - Official Guide to Data Science and Bioinformatics in R
 
-Welcome to UP BMEC's student-made introductory guide to data science and bioinformatics using R! This guide is meant for UP BMEC members and applcants, but may also be used by anyone who comes across this repository.
+Welcome to UP BMEC's student-made introductory guide to data science and bioinformatics using R! This guide is meant for UP BMEC members and applicants, but may also be used by anyone who comes across this repository.
 
 ## FAQs
 
 ### What is R (and RStudio)?
-R is a free and open-source programming language targeted towards statistical analysis, data visualization, and machine learning. Having been created for data analysis, the language has thousands of packages meant for specialized data science projects. It's often used for various sectors, implemented not just in industries but also within the academe for bioinformatics, environmental science, pharmaceuticals, and more. RStudio is an integrated development environment (IDE) designed for R, with its layout designed to let you immediately display plots, view environment variables, and even push commits to GitHub. Other IDEs such as Positron (which has the same developer) and Visual Studio Code (which will need extensions downloaded to run R) can be used, but for the sake of this guide, RStudio will be used to showcase code snippets and data visualization.
+R is a free and open-source programming language targeted towards statistical analysis, data visualization, and machine learning. Having been created for data analysis, the language has thousands of packages meant for specialized data science projects. It's often used for various sectors, implemented not just in industries but also within the academe for bioinformatics, environmental science, pharmaceuticals, and more. 
+
+RStudio is an integrated development environment (IDE) designed for R, with its layout designed to let you immediately display plots, view environment variables, and even push commits to GitHub. Other IDEs such as Positron (which has the same developer) and Visual Studio Code (which will need extensions downloaded to run R) can be used, but for the sake of this guide, RStudio will be used to showcase code snippets and data visualization.
 
 ### What's the difference from Python?
 Both languages are used for data analysis; however, Python was designed for general-purpose programming while R was designed specifically for statistical analysis. Python tends to lead in machine learning and is more commonly used due to being more well-known in tech sectors, while R tends to be more niche yet more powerful for statistical analysis and data visualization. For the most part, though, these differences do not matter, and it's often up to personal preference for the user! 
