@@ -35,9 +35,9 @@ To follow along, the first step would be to download the latest version of R and
 
 ### Other IDE Setup Tips (Optional)
 - To make code easier to read, you can wrap code through hitting `Ctrl + Shift + A` (Windows/Linux) or `Cmd + Shift + A` (Mac). This prevents your code from bleeding past the Source pane (where you view your code) and instead cuts into another line.
-  - To permanently enable this, head to *Tools > Global Options > Code > Editing* then check *Soft-wrap R source files*. Click *Apply* then *OK*.
-- To change the theme, head to *Tools > Global Options > Appearance* and select a theme of your liking!
-- To allow for a clean state in RStudio every time you open your IDE, head to *Tools > Global Options > General*, uncheck *Restore .RData into workspace at startup*, and set *Save workspace to .RData on exit* to *Never*.
+  - To permanently enable this, head to *Tools > Global Options... > Code > Editing* then check *Soft-wrap R source files*. Click *Apply* then *OK*.
+- To change the theme, head to *Tools > Global Options... > Appearance* and select a theme of your liking!
+- To allow for a clean state in RStudio every time you open your IDE, head to *Tools > Global Options... > General*, uncheck *Restore .RData into workspace at startup*, and set *Save workspace to .RData on exit* to *Never*.
 
 ## Guide Content
 While the guide is still a work in progress, below are the content you can expect over the next few months!
