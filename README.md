@@ -44,7 +44,7 @@ While the guide is still a work in progress, below are the content you can expec
 
 | Title | Description |
 | -------- | -------- |
-| Basic Functions in R | Introduction to functions, data types, and packages |
+| Introductory Programming | Introduction to functions, data types, and packages |
 | Loading and Manipulating Data | Loading various file types and manipulating data to filter, clean, aggregate, and join datasets |
 | Data Visualization and Exploratory Data Analysis | Creating and modifying plots with R |
 | Statistical Tests | Applying important statistical tests with common packages and functions |
