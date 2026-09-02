@@ -49,6 +49,8 @@ While the guide is still a work in progress, below are the content you can expec
 | Data Visualization and Exploratory Data Analysis | Creating and modifying plots with R |
 | Statistical Tests | Applying important statistical tests with common packages and functions |
 | Special Topic: Bioinformatics | Using core bioinformatics-related packages in data analysis |
+| Regression Models | Understanding the purpose and fundamentals of various regression models |
+| Machine Learning | Developing machine learning models through various algorithms |
 
 UP BMEC's social media pages will be updated when a new part of the guide is published, so follow us to stay updated!
 - [Facebook](https://www.facebook.com/UPBiomedicalEngineeringCircle)
