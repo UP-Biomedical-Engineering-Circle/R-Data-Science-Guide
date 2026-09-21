@@ -1,6 +1,8 @@
 # UP BMEC - Official Guide to Data Science and Bioinformatics in R
 
-Welcome to UP BMEC's student-made introductory guide to data science and bioinformatics using R! This guide is meant for UP BMEC members and applicants, but may also be used by anyone who comes across this repository.
+Welcome to UP BMEC's student-made introductory guide to data science and bioinformatics using R! This is a free, open-source guide that can be used by anyone, and is used by UP BMEC members and applicants to learn the language and work on the organization's own projects.
+
+-----
 
 ## FAQs
 
@@ -44,7 +46,7 @@ While the guide is still a work in progress, below are the content you can expec
 
 | Title | Description |
 | -------- | -------- |
-| Introductory Programming | Introduction to functions, data types, and packages |
+| [Introductory Programming](https://github.com/UP-Biomedical-Engineering-Circle/R-Data-Science-Guide/blob/main/01IntroductoryProgramming/UP-BMEC-Guide-to-R---Introductory-Programming.md) | Introduction to functions, data types, and packages |
 | Loading and Manipulating Data | Loading various file types and manipulating data to filter, clean, aggregate, and join datasets |
 | Data Visualization and Exploratory Data Analysis | Creating and modifying plots with R |
 | Statistical Tests | Applying important statistical tests with common packages and functions |
@@ -59,7 +61,12 @@ UP BMEC's social media pages will be updated when a new part of the guide is pub
 
 Thank you for taking interest in this guide and we hope to see you around! 💚
 
-*Guide written by Sam Gianan*
+-----
+
+## Contributors
+- [Sam Gianan](github.com/greywolffles)
+
+-----
 
 ## License and Copyright
 
