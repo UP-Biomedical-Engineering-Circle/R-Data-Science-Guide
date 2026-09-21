@@ -22,8 +22,16 @@ Sam Gianan
     - [Matrices](#matrices)
     - [Dataframes](#dataframes)
     - [Class Identification](#class-identification)
-- [This module is still under
-  construction!](#this-module-is-still-under-construction)
+  - [Logic and Control Flow](#logic-and-control-flow)
+    - [Conditional Statements](#conditional-statements)
+    - [Logical Operators](#logical-operators)
+    - [Loops](#loops)
+  - [Troubleshooting](#troubleshooting)
+    - [Documentation](#documentation)
+    - [Common Error Messages](#common-error-messages)
+    - [Tips for Fixing Errors](#tips-for-fixing-errors)
+  - [Final Messages](#final-messages)
+  - [Contributors](#contributors)
   - [License and Copyright](#license-and-copyright)
 
 # Introductory Programming
@@ -135,6 +143,18 @@ Bonus things to know to organize your scripts:
 
 # This too ====
 ```
+
+To check your working directory (i.e. where all your files are, we use
+`getwd()`.
+
+``` r
+getwd()
+```
+
+    ## [1] "C:/Users/Mike/Desktop/BMEC/R-Data-Science-Guide/01IntroductoryProgramming"
+
+You can use `setwd()` to manually set your directory, but this is an
+archaic way. Instead, we now use the *New Directory* method set earlier.
 
 ## Basic Functions and Variables
 
@@ -670,13 +690,264 @@ We can see that running `class()` gives us “data.frame”, letting us know
 that R treats type_test as a dataframe. However, a dataframe is also
 just a list of vectors, which is the value given by `typeof()`.
 
+## Logic and Control Flow
+
+The final part of this module will focus on logic and control flow.
+Control statements run a code block based on what condition is met.
+
+### Conditional Statements
+
+Below is an if-else statement, which essentially says “if this condition
+is met, do this; otherwise, do this.”
+
+``` r
+score <- 79.45
+
+if (score >= 92) {
+  print("Grade: 1.00")
+} else if (score >= 88) {
+  print("Grade: 1.25")
+} else if (score >= 84) {
+  print("Grade: 1.50")
+} else if (score >= 80) {
+  print("Grade: 1.75")
+} else if (score >= 76) {
+  print("Grade: 2.00")
+} else if (score >= 72) {
+  print("Grade: 2.25")
+} else if (score >= 68) {
+  print("Grade: 2.50")
+} else if (score >= 64) {
+  print("Grade: 2.75")
+} else {
+  print("Grade: 3.00 and below")
+}
+```
+
+    ## [1] "Grade: 2.00"
+
+Above is a code snippet that allows you to classify a student’s grade. I
+suggest changing the values to see how the score fits into various
+cases. *The `else` or `else if` statement must always sit on the same
+line as the closing curly brace of the previous block.*
+
+### Logical Operators
+
+There are several logical operators:
+
+- `&` (AND) - **Both** conditions must be true.
+
+- `|` (OR) - **At least one** condition must be true.
+
+- `!` (NOT) - Changes value from true to false or vice versa.
+
+``` r
+# Demonstration #1
+age <- 24
+has_id <- TRUE
+
+if (age >= 18 & has_id == TRUE) {
+  print("Can drink alcohol!")
+} else {
+  print("Cannot drink alcohol!")
+}
+```
+
+    ## [1] "Can drink alcohol!"
+
+``` r
+# Demonstration #2
+is_engg_student <- FALSE
+is_not_engg_student <- TRUE
+
+if (is_engg_student == TRUE || is_not_engg_student == TRUE) {
+  print("Can join BMEC (we're university-wide)!")
+} else {
+  print("Cannot join BMEC!")
+}
+```
+
+    ## [1] "Can join BMEC (we're university-wide)!"
+
+### Loops
+
+Loops are used to repeat a block of code multiple times based on a
+condition.
+
+#### For Loops
+
+A `for` loop is to set a specific number of times to repeat a code
+block. We can set this through a sequence of numbers.
+
+``` r
+# Loop through a sequence of numbers
+for (i in 1:5) {
+  print(paste("Iteration number:", i))
+}
+```
+
+    ## [1] "Iteration number: 1"
+    ## [1] "Iteration number: 2"
+    ## [1] "Iteration number: 3"
+    ## [1] "Iteration number: 4"
+    ## [1] "Iteration number: 5"
+
+We can also loop through all values in a vector.
+
+``` r
+# Loop through a character vector (using fruits vector from earlier)
+print("Ice Cream Flavors:")
+```
+
+    ## [1] "Ice Cream Flavors:"
+
+``` r
+for (fruit in fruits) {
+  print(paste(fruit, "Ice Cream"))
+}
+```
+
+    ## [1] "Blueberry Ice Cream"
+    ## [1] "Apple Ice Cream"
+    ## [1] "Orange Ice Cream"
+    ## [1] "Strawberry Ice Cream"
+    ## [1] "Banana Ice Cream"
+    ## [1] "Grapes Ice Cream"
+    ## [1] "Kiwi Ice Cream"
+
+#### While Loops
+
+Use a `while` loop to repeat code while a certain condition remains
+`TRUE`. Ensure that the condition eventually becomes `FALSE` to prevent
+an infinite loop.
+
+``` r
+payment_no <- 1
+
+while (payment_no <= 3) {
+  print(paste("Payment No.:", payment_no))
+  payment_no <- payment_no + 1 # Adds an increment
+}
+```
+
+    ## [1] "Payment No.: 1"
+    ## [1] "Payment No.: 2"
+    ## [1] "Payment No.: 3"
+
+``` r
+print("You reached the maximum number of payments!")
+```
+
+    ## [1] "You reached the maximum number of payments!"
+
 ------------------------------------------------------------------------
 
-# This module is still under construction!
+## Troubleshooting
 
-Changes were pushed to test committing in GItHub.
+Knowing how to deal with documentations and errors is an important part
+of learning how to code, hence what this section is for.
 
-Don’t worry, the rest of the module will be up soon!
+### Documentation
+
+You can access documentation help from RStudio itself in the *Help*
+section. You can view what a function or package does. To search for a
+function, use `?[function]` or `help()`. To search for a package,
+specify its name within the `help()` function.
+
+``` r
+# Opens documentation for a function
+?mean
+help(mean)
+
+# Opens documentation for a package
+help(package = "ggplot2")
+
+# Search for a specific keyword across all installed packages
+??regression
+```
+
+### Common Error Messages
+
+“Error: object ‘x’ not found”
+
+- This means that R has no record of a variable or function with that
+  name.
+- To fix, check for typos (including if you are using the correct case),
+  or ensure you have run the line of code that defines the object.
+
+“Error: unexpected ‘}’” (or unexpected symbol)
+
+- This may indicate mismatched left-hand-side and right-hand-side
+  brackets, parentheses, or braces. It may also indicate missing commas
+  or a misspelled function.
+- To fix, look at the line number in the error message and trace for the
+  opening grouping symbol to see if they are properly closed.
+
+“Warning message: NAs introduced by coercion”
+
+- This is a warning, not an error. During data type conversion, there
+  were some values that R could not convert, so they were instead turned
+  into missing values (`NA`).
+- Check your source data and perhaps identify an approach for either
+  dealing with `NA` values altogether or changing your data manipulation
+  method beforehand. For example, `as.numeric("apple")` will trigger the
+  warning.
+
+### Tips for Fixing Errors
+
+1.  Read the error message closely. Look for file names, line numbers,
+    or specific function names mentioned. Stack Overflow and AI chatbots
+    will also be your best bet during debugging.
+2.  Sometimes old variables clog up memory, so head to *Session* **\>**
+    *Restart R* to restart.
+3.  For dealing with numeric data, use `str(your_data)` to ensure your
+    numbers are actually formatted as numbers and not characters.
+
+------------------------------------------------------------------------
+
+## Final Messages
+
+Congratulations on completing the first module! You now know how to deal
+with basic programming in R. The next module will focus on data cleaning
+and manipulation, wherein you’ll learn:
+
+- Importing and exporting various file types
+
+- Filtering, sorting, and cleaning data
+
+- Using the `tidyverse` collection of packages and understanding its
+  syntax
+
+The next modules will now have more hands-on examples as well; if some
+topics here may not seem fully tangible, you’ll understand them more
+through applying them as you work with your first dataset!
+
+On a more personal note, thank you for taking the time to go through the
+very first module of Bio-informed. As the person in charge of
+spearheading the bioinformatics division, it had always been a dream of
+mine to be able to contribute to education and research in data science,
+especially as someone with a non-statistics/CS/math degree. I consider
+data to be my first love, and I hope that these resources may help give
+you the skills to pursue your own projects, no matter how niche the
+topic may be.
+
+I hope that the module was understandable for beginners, and if you have
+any suggestions, concerns, or questions, you may reach me at my email:
+<samnicole.gianan@gmail.com>. Alternatively, you may reach me at
+**greywolffles** on Discord or [Sam Gianan](m.me/sam.gianan.98) on
+Messenger. I’d also love to hear about any projects you may be working
+on!
+
+Again, thank you for looking through our guide, and I hope to see you in
+the next one, coming soon!
+
+— Sam Gianan, UP BMEC Bioinformatics Head
+
+------------------------------------------------------------------------
+
+## Contributors
+
+- [Sam Gianan](github.com/greywolffles)
 
 ------------------------------------------------------------------------
 
