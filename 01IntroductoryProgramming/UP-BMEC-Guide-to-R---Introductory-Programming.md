@@ -10,11 +10,18 @@ Sam Gianan
       Script](#creating-your-first-project-and-script)
   - [Basic Functions and Variables](#basic-functions-and-variables)
   - [Data Types](#data-types)
+    - [Character](#character)
+    - [Numeric](#numeric)
+    - [Integer](#integer)
+    - [Logical](#logical)
+    - [Complex](#complex)
+    - [Raw](#raw)
   - [Data Structures](#data-structures)
     - [Vectors](#vectors)
     - [Lists](#lists)
     - [Matrices](#matrices)
     - [Dataframes](#dataframes)
+    - [Class Identification](#class-identification)
 - [This module is still under
   construction!](#this-module-is-still-under-construction)
   - [License and Copyright](#license-and-copyright)
@@ -201,7 +208,242 @@ y %% x # Modulus
 ## Data Types
 
 Before creating data structures, it is important to first know core data
-types in R.
+types in R. There are six atomic data types, which are the fundamental
+datatypes we will be working with.
+
+### Character
+
+This data is meant for text. To create a value of the character data
+type, simply wrap the text (or even number) in single or double quotes.
+
+``` r
+my_character1 <- "hello"
+my_character2 <- "101"
+```
+
+To convert from one data type to the character data type, we use
+`as.character()`.
+
+``` r
+my_character3 <- as.character(67)
+print(my_character3)
+```
+
+    ## [1] "67"
+
+Notice that the number has quotes around it!
+
+### Numeric
+
+This acts as the default type for any number, whether or not it has a
+decimal.
+
+``` r
+my_numeric1 <- 3.14
+my_numeric2 <- 150
+```
+
+We use `as.numeric()` to convert to a numeric data type; we’ll use this
+to convert `my_character3` back into numeric data.
+
+``` r
+my_numeric3 <- as.numeric(my_character3)
+print(my_numeric3)
+```
+
+    ## [1] 67
+
+The quotes have now disappeared.
+
+### Integer
+
+Integers are for data without decimal places.
+
+``` r
+my_integer1 <- 120L
+my_integer2 <- 50L
+```
+
+Once again, we can use `as.integer()` to convert `my_character2`.
+
+``` r
+my_integer3 <- as.integer(my_character2)
+print(my_integer3)
+```
+
+    ## [1] 101
+
+When dividing integers, the final value will be in the numeric data
+type. However, you can specify to fetch the quotient in integer form
+with integer division.
+
+``` r
+# Normal division (returns a numeric value)
+my_integer1 / my_integer2
+```
+
+    ## [1] 2.4
+
+``` r
+# Integer division (returns an integer value)
+my_integer1 %/% my_integer2
+```
+
+    ## [1] 2
+
+``` r
+# Remainder (Returns an integer value)
+my_integer1 %% my_integer2
+```
+
+    ## [1] 20
+
+To get the floor and ceiling values, we use, well, `floor()` and
+`ceiling()`.
+
+``` r
+floor(my_numeric1)
+```
+
+    ## [1] 3
+
+``` r
+ceiling(my_numeric1)
+```
+
+    ## [1] 4
+
+### Logical
+
+This is made of true or false statements (in uppercase), and will be
+used during data manipulation and filtering later on.
+
+``` r
+is_weekday <- TRUE
+is_weekend <- FALSE
+print(is_weekday)
+```
+
+    ## [1] TRUE
+
+``` r
+print(is_weekend)
+```
+
+    ## [1] FALSE
+
+``` r
+# Shortcuts can also be used
+is_daytime <- T
+is_nighttime <- F
+print(is_daytime)
+```
+
+    ## [1] TRUE
+
+``` r
+print(is_nighttime)
+```
+
+    ## [1] FALSE
+
+More than often though, the way to generate logical values is by
+comparing values through logical operators. We’ll go into more detail on
+this later, but here is a short demonstration just to show the
+capabilities:
+
+``` r
+# Check if values are equal
+5 == 10
+```
+
+    ## [1] FALSE
+
+``` r
+5 != 10
+```
+
+    ## [1] TRUE
+
+``` r
+# Check for size comparison
+5 < 10
+```
+
+    ## [1] TRUE
+
+``` r
+5 <= 10
+```
+
+    ## [1] TRUE
+
+``` r
+5 >= 10
+```
+
+    ## [1] FALSE
+
+``` r
+5 > 10
+```
+
+    ## [1] FALSE
+
+``` r
+# Check if in a vector
+"Red" %in% c("Red", "Orange", "Yellow")
+```
+
+    ## [1] TRUE
+
+### Complex
+
+The complex data type is used to store complex numbers, but this won’t
+really be used.
+
+``` r
+# Storing real + imaginary value
+my_complex1 <- 5 + 6i
+print(my_complex1)
+```
+
+    ## [1] 5+6i
+
+``` r
+# Storing just imaginary value
+my_complex2 <- 7i
+print(my_complex2)
+```
+
+    ## [1] 0+7i
+
+### Raw
+
+The raw data type is meant to store binary data, and is meant for
+low-level processing.
+
+``` r
+# Generating raw vector of length 10
+my_raw1 <- raw(10)
+print(my_raw1)
+```
+
+    ##  [1] 00 00 00 00 00 00 00 00 00 00
+
+``` r
+# Converting text to raw bytes and vice versa
+my_raw2 <- charToRaw(my_character1)
+print(my_raw2)
+```
+
+    ## [1] 68 65 6c 6c 6f
+
+``` r
+rawToChar(my_raw2)
+```
+
+    ## [1] "hello"
 
 ## Data Structures
 
@@ -403,6 +645,30 @@ print(my_df)
 
 This is the type you’ll be working with when handling actual data from
 existing datasets!
+
+### Class Identification
+
+To check for the classification of values, we can either use `class()`
+or `typeof()`. Using `class()` gives us the high-level, general data
+type, while `typeof()` gives the low-level, internal data type. This
+could be better understood through a demonstration.
+
+``` r
+type_test <- data.frame(id = 1:2, name = c("A", "B"))
+class(type_test)
+```
+
+    ## [1] "data.frame"
+
+``` r
+typeof(type_test)
+```
+
+    ## [1] "list"
+
+We can see that running `class()` gives us “data.frame”, letting us know
+that R treats type_test as a dataframe. However, a dataframe is also
+just a list of vectors, which is the value given by `typeof()`.
 
 ------------------------------------------------------------------------
 
