@@ -41,6 +41,8 @@ Welcome to the first module!
 R has a lot of capabilities when it comes to data analysis and machine
 learning, but it’s first important to understand the basics.
 
+------------------------------------------------------------------------
+
 ## Understanding RStudio
 
 ### Panes
@@ -156,6 +158,8 @@ getwd()
 You can use `setwd()` to manually set your directory, but this is an
 archaic way. Instead, we now use the *New Directory* method set earlier.
 
+------------------------------------------------------------------------
+
 ## Basic Functions and Variables
 
 We can now move on to introductory programming! To create your first
@@ -224,6 +228,8 @@ y %% x # Modulus
 ```
 
     ## [1] 0
+
+------------------------------------------------------------------------
 
 ## Data Types
 
@@ -465,6 +471,8 @@ rawToChar(my_raw2)
 
     ## [1] "hello"
 
+------------------------------------------------------------------------
+
 ## Data Structures
 
 ### Vectors
@@ -689,6 +697,8 @@ typeof(type_test)
 We can see that running `class()` gives us “data.frame”, letting us know
 that R treats type_test as a dataframe. However, a dataframe is also
 just a list of vectors, which is the value given by `typeof()`.
+
+------------------------------------------------------------------------
 
 ## Logic and Control Flow
 
